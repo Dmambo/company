@@ -8,6 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import RequestQuoteModal from '@/components/modal';
 import { ModalProvider } from '@/components/ui/animated-modal';
+import RequestQuote from './../quote/page';
+import {Button} from '@/components/ui/button';
 
 const Services = () => {
   useEffect(() => {
@@ -49,7 +51,13 @@ const Services = () => {
               We craft custom websites tailored to your business needs. From design to development, we ensure your site is not only visually appealing but also functional, user-friendly, and optimized for growth.
             </p>
             
-              <RequestQuoteModal />
+              <div>
+                <Link
+                href="/quote">
+                  <Button>RequestQuote</Button>
+                
+                </Link>
+              </div>
             
           </div>
         </motion.div>
@@ -77,7 +85,12 @@ const Services = () => {
               Our Local SEO services help your business stand out in local searches. We optimize your online presence to attract more local customers, ensuring you rank higher in search results.
             </p>
             
-              <RequestQuoteModal />
+              <div>
+                <Link
+                href="/quote"
+                >
+                RequestQuote</Link>
+              </div>
             
           </div>
         </motion.div>
@@ -105,7 +118,12 @@ const Services = () => {
               Keep your website running smoothly with our maintenance services. We handle regular updates, security checks, and performance optimization, so you can focus on your business.
             </p>
             
-              <RequestQuoteModal />
+              <div>
+                <Link
+                href="/quote"
+                >
+                RequestQuote</Link>
+              </div>
             
           </div>
         </motion.div>
@@ -133,7 +151,12 @@ const Services = () => {
               Our support services provide you with the assistance you need, whenever you need it. Whether it’s troubleshooting, making updates, or offering advice, our team is here to help.
             </p>
             
-              <RequestQuoteModal />
+              <div>
+                <Link
+                href="/quote"
+                >
+                RequestQuote</Link>
+              </div>
             
           </div>
         </motion.div>
