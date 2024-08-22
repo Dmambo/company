@@ -21,7 +21,7 @@ export function Panel() {
         "Integration with business tools",
         "Fast, secure, and scalable",
       ],
-      button: "portfolio",
+      button: "/services",
     },
     {
       title: "E-Commerce Websites",
@@ -35,7 +35,7 @@ export function Panel() {
         "Customer accounts and order tracking",
         "Scalable and marketing-ready",
       ],
-      button: "portfolio",
+      button: "/services",
     },
     {
       title: "Portfolio Websites",
@@ -49,7 +49,7 @@ export function Panel() {
         "Social media integration",
         "Responsive and accessible design",
       ],
-      button: "portfolio",
+      button: "/services",
     },
   ];
 
