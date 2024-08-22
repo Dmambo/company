@@ -12,6 +12,7 @@ const Quote = () => {
     email: "",
     phone: "",
     service: "",
+    plan: "",
     message: "",
   });
 
@@ -29,15 +30,14 @@ const Quote = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     emailjs
-    .send(
-      'service_r4qauao',
-      'template_t7bp7yp',
-      formData,
-      'qfKYZS8k3qOWMhcIm'
-    )
+      .send(
+        "service_r4qauao",
+        "template_t7bp7yp",
+        formData,
+        "qfKYZS8k3qOWMhcIm"
+      )
       .then(
         (result) => {
-        
           alert("Message sent successfully!");
           // Clear the form fields
           setFormData({
@@ -45,6 +45,7 @@ const Quote = () => {
             email: "",
             phone: "",
             service: "",
+            plan: "",
             message: "",
           });
           router.push("/thanks");
@@ -163,6 +164,34 @@ const Quote = () => {
               <option value="Support">Support</option>
             </select>
           </div>
+
+          {/* plan (only show if "Website Creation" is selected) */}
+          {formData.service === "Website Creation" && (
+            <div className="mb-4">
+              <label
+                htmlFor="plan"
+                className="block text-lg font-medium text-gray-700"
+              >
+                Plan
+              </label>
+              <select
+                id="plan"
+                name="plan"
+                value={formData.plan}
+                onChange={handleChange}
+                required
+                className="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500"
+              >
+                <option value="" disabled>
+                  Select a plan
+                </option>
+                <option value="Basic">Basic</option>
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
+                <option value="Custom">Custom</option>
+              </select>
+            </div>
+          )}
           {/* message */}
           <div className="mb-4">
             <label
