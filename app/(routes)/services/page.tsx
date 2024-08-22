@@ -54,8 +54,7 @@ const Services = () => {
               <div>
                 <Link
                 href="/quote">
-                  <Button>RequestQuote</Button>
-                
+                  <Button>Get Quote</Button>          
                 </Link>
               </div>
             
@@ -86,10 +85,10 @@ const Services = () => {
             </p>
             
               <div>
-                <Link
-                href="/quote"
-                >
-                RequestQuote</Link>
+             <Link
+                href="/quote">
+                  <Button>Get Quote</Button>          
+                </Link>
               </div>
             
           </div>
@@ -119,10 +118,10 @@ const Services = () => {
             </p>
             
               <div>
-                <Link
-                href="/quote"
-                >
-                RequestQuote</Link>
+             <Link
+                href="/quote">
+                  <Button>Get Quote</Button>          
+                </Link>
               </div>
             
           </div>
@@ -152,10 +151,10 @@ const Services = () => {
             </p>
             
               <div>
-                <Link
-                href="/quote"
-                >
-                RequestQuote</Link>
+             <Link
+                href="/quote">
+                  <Button>Get Quote</Button>          
+                </Link>
               </div>
             
           </div>
