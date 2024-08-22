@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 const Quote = () => {
   const router = useRouter();
@@ -27,10 +28,32 @@ const Quote = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission (e.g., send data to server, trigger email, etc.)
-    console.log("Form submitted:", formData);
-    // Redirect to a thank you page or display a success message
-    router.push("/thanks");
+    emailjs
+    .send(
+      'service_r4qauao',
+      'template_t7bp7yp',
+      formData,
+      'qfKYZS8k3qOWMhcIm'
+    )
+      .then(
+        (result) => {
+        
+          alert("Message sent successfully!");
+          // Clear the form fields
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            service: "",
+            message: "",
+          });
+          router.push("/thanks");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send message, please try again.");
+        }
+      );
   };
 
   return (
@@ -52,6 +75,7 @@ const Quote = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
+          {/* name */}
           <div className="mb-4">
             <label
               htmlFor="name"
@@ -69,7 +93,7 @@ const Quote = () => {
               className="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500"
             />
           </div>
-
+          {/* email */}
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -87,7 +111,7 @@ const Quote = () => {
               className="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500"
             />
           </div>
-
+          {/* phone */}
           <div className="mb-4">
             <label
               htmlFor="phone"
@@ -114,7 +138,7 @@ const Quote = () => {
               </div>
             </div>
           </div>
-
+          {/* service */}
           <div className="mb-4">
             <label
               htmlFor="service"
@@ -139,7 +163,7 @@ const Quote = () => {
               <option value="Support">Support</option>
             </select>
           </div>
-
+          {/* message */}
           <div className="mb-4">
             <label
               htmlFor="message"

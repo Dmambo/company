@@ -28,7 +28,6 @@ const ContactUs = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
           alert('Message sent successfully!');
           // Clear the form fields
           setFormData({
