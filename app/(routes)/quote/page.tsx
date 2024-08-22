@@ -1,20 +1,24 @@
-"use client"
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 const Quote = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -24,9 +28,9 @@ const Quote = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission (e.g., send data to server, trigger email, etc.)
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // Redirect to a thank you page or display a success message
-    router.push('/thanks');
+    router.push("/thanks");
   };
 
   return (
@@ -49,7 +53,10 @@ const Quote = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="mb-4">
-            <label htmlFor="name" className="block text-lg font-medium text-gray-700">
+            <label
+              htmlFor="name"
+              className="block text-lg font-medium text-gray-700"
+            >
               Name
             </label>
             <input
@@ -64,7 +71,10 @@ const Quote = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="email" className="block text-lg font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-lg font-medium text-gray-700"
+            >
               Email
             </label>
             <input
@@ -79,31 +89,37 @@ const Quote = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="phone" className="block text-lg font-medium text-gray-700">
+            <label
+              htmlFor="phone"
+              className="block text-lg font-medium text-gray-700"
+            >
               Phone
             </label>
-       <div className='flex gap-3 items-center'>
-       <div className=' border border-gray-200 p-2 rounded-xl bg-green-300'>
-            +224
-           </div>
-           <div>
-           <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              inputMode="numeric"
-              pattern="[0-9]*"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500"
-            />
-           </div>
-       </div>
+            <div className="flex gap-3 items-center">
+              <div className=" border border-gray-200 p-2 rounded-xl bg-green-300">
+                +224
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  className="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="mb-4">
-            <label htmlFor="service" className="block text-lg font-medium text-gray-700">
+            <label
+              htmlFor="service"
+              className="block text-lg font-medium text-gray-700"
+            >
               Service
             </label>
             <select
@@ -114,7 +130,9 @@ const Quote = () => {
               required
               className="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500"
             >
-              <option value="" disabled>Select a service</option>
+              <option value="" disabled>
+                Select a service
+              </option>
               <option value="Website Creation">Website Creation</option>
               <option value="Local SEO">Local SEO</option>
               <option value="Maintenance">Maintenance</option>
@@ -123,7 +141,10 @@ const Quote = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="message" className="block text-lg font-medium text-gray-700">
+            <label
+              htmlFor="message"
+              className="block text-lg font-medium text-gray-700"
+            >
               Message
             </label>
             <textarea

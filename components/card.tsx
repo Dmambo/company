@@ -5,6 +5,7 @@ import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Link from "next/link";
 import { Card } from './ui/container-scroll-animation';
+import { Button } from "./ui/button";
 
 export function Carrd() {
   return (
@@ -33,22 +34,28 @@ export function Carrd() {
           />
         </CardItem>
         <div className="flex justify-between items-center mt-20">
+          <Button>
           <CardItem
             translateZ={20}
             as={Link}
-            href="https://twitter.com/mannupaaji"
-            target="__blank"
-            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+            href="/contact"
+            // target="__blank"
+            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white hover:text-green-400"
           >
             Contact Us Now →
           </CardItem>
+          </Button>
+          <Button>
           <CardItem
             translateZ={20}
-            as="button"
-            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+            as={Link}
+            href="/quote"
+            
+            className="px-4 py-2 rounded-xl  dark:bg-white dark:text-black text-white text-xs font-bold hover:text-green-400"
           >
             Get Quote
           </CardItem>
+          </Button>
         </div>
       </CardBody>
     </CardContainer>
