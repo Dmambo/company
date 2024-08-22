@@ -91,7 +91,9 @@ const Navbar = () => {
           {/* Call Us Button */}
           <div className="mt-4 md:mt-0 mb-2 flex justify-center items-center p-4">
             <Button variant={'outline'} className='bg-black border-green-500 text-blue-600'>
+              <a href="tel:+1234567890" className="flex items-center">
               <Phone className="mr-2 text-blue-600" /> Let&apos;s Talk
+              </a>
             </Button>
           </div>
         </div>

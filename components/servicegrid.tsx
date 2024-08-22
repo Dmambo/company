@@ -1,5 +1,6 @@
 import React from "react";
 import { Laptop } from "lucide-react";
+import Link from "next/link";
 
 // Example data array
 const items = [
@@ -78,9 +79,13 @@ export function ServiceGrid() {
                 </li>
               ))}
             </ul>
+            <Link 
+            href="/services"
+            >
             <button className=" text-sm mt-4 py-2 px-4 text-white bg-gradient-to-br from-teal-500 to-teal-700 rounded-full shadow-lg transition-colors duration-300 hover:from-teal-600 hover:to-teal-800">
               Learn More
             </button>
+            </Link>
           </div>
         </div>
       ))}

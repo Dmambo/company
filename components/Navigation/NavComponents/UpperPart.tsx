@@ -1,26 +1,30 @@
 import { MessageCircle, Phone, Mail } from "lucide-react";
+import { FaWhatsapp} from 'react-icons/fa';
 // import Link from "next/link";
-
 
 const UpperNav = () => {
   return (
     <div className="flex  justify-evenly text-sm text-center md:text-left bg-black text-white p-3 ">
-        {/* Email */}
+      {/* Email */}
       <div className="flex justify-center md:justify-start gap-2 items-center hover:scale-125 transform transition duration-300 text-red-400">
         <div>
           <Mail className=" w-4 h-4" />
         </div>
         <div className=" hidden md:block">
-          <h3>ibkhalidworld@gmail.com</h3>
+          <a href="mailto:ibkhalidworld@gmail.com">
+            <h3>ibkhalidworld@gmail.com</h3>
+          </a>
         </div>
       </div>
-        {/* whatsapp */}
+      {/* whatsapp */}
       <div className="flex justify-center md:justify-start gap-2 items-center hover:scale-125 transform transition duration-300 text-yellow-400 hover:">
-        <div >
-          <MessageCircle className=" w-4 h-4" />
+        <div>
+          <FaWhatsapp className=" w-4 h-4" />
         </div>
         <div className=" hidden md:block">
-          <h3>+918273773558</h3>
+          <a href="https://wa.me/918273773558">
+            <h3>+918273773558</h3>
+          </a>
         </div>
       </div>
       {/* Call */}
@@ -29,11 +33,11 @@ const UpperNav = () => {
           <Phone className=" w-4 h-4" />
         </div>
         <div className=" hidden md:block">
-          <h3>+224613956391</h3>
+          <a href="tel:+224613956391">
+            <h3>+224613956391</h3>
+          </a>
         </div>
       </div>
-      
-      
     </div>
   );
 };
